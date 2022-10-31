@@ -23,6 +23,8 @@
             }
         }
 
+        public string Color { get; set; }
+
         public double Perimetr
         {
             get
