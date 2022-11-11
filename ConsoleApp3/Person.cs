@@ -15,15 +15,14 @@
             get => $"{Firstname} {Lastname}"; 
         }
 
-        public void Bite(Person person)
+        public virtual void Bite(Person person)
         {
             Console.WriteLine($"{this.Fullname} bite {person.Fullname}");
         }
 
         public override string ToString()
         {
-            return $"Firstname: {Firstname}\n" +
-                $"Lastname: {Lastname}";
+            return base.ToString();
         }
     }
 }
