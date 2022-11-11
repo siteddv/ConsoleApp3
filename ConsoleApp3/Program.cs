@@ -1,5 +1,10 @@
 ﻿using ConsoleApp3;
 
 Player pl = new Player("Dima", "Vinogradov", 185);
-Player pl1 = new Player("Dimochka", "Vin", 155);
-Console.WriteLine(pl1);
+
+IMovable movable = pl;
+
+Player p = (Player)pl;
+Console.WriteLine(p.Firstname);
+movable.Move();
+Person p1 = new Player("1", "2", 3);

@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp3
 {
-    public class Person
+    public class Person : IBitable, IMovable
     {
         public Person(string firstname, string lastname)
         {
@@ -18,6 +18,11 @@
         public virtual void Bite(Person person)
         {
             Console.WriteLine($"{this.Fullname} bite {person.Fullname}");
+        }
+
+        public void Move()
+        {
+            Console.WriteLine("I\'m moving");
         }
 
         public override string ToString()
