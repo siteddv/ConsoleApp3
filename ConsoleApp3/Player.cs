@@ -1,10 +1,7 @@
 ﻿namespace ConsoleApp3
 {
-    public class Player
+    public class Player : Person
     {
-
-        public string Name { get; set; }
-        public string Surname { get; set; }
         public double Height { 
             get 
             { 
@@ -18,19 +15,23 @@
         
         private double _height;
 
-        public Player(string name, string surname, double height)
+        public Player(string firstname, string lastname) : base(firstname, lastname)
         {
-            Name = name;
-            Surname = surname;
-            Height = height;
+            Firstname = firstname;
+            Lastname = lastname;
         }
 
-        public Player()
-        {
-            Name = "Sergei";
-            Surname = "Goldysh";
-            Height = 192;
-        }
+        //public Player(string name, string surname, double height)
+        //{
+        //    Name = name;
+        //    Surname = surname;
+        //    Height = height;
+        //}
+
+        //public Player() /*: this("Sergei", "Goldysh", 192)*/
+        //{
+        //    Console.WriteLine(this);
+        //}
 
         public double Weight
         {
