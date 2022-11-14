@@ -18,8 +18,3 @@ foreach(IBitable aiiiiii in crazyPeople)
 {
     aiiiiii.Bite(atai);
 }
-
-for(int i= 0; i < crazyPeople.Count; i++)
-{
-    IBitable crazy = crazyPeople[i];
-}
