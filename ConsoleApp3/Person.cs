@@ -17,12 +17,12 @@
 
         public virtual void Bite(Person person)
         {
-            Console.WriteLine($"{this.Fullname} bite {person.Fullname}");
+            Console.WriteLine($"Person {Firstname} is biting {person.Firstname}");
         }
 
         public void Move()
         {
-            Console.WriteLine("I\'m moving");
+            Console.WriteLine($"Person {Fullname} is moving");
         }
 
         public override string ToString()

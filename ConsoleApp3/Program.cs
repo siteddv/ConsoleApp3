@@ -1,10 +1,25 @@
 ﻿using ConsoleApp3;
 
-Player pl = new Player("Dima", "Vinogradov", 185);
 
-IMovable movable = pl;
+List<IBitable> crazyPeople = new List<IBitable>();
+Animal askar = new Animal("Askar");
+Animal ashir = new Animal("Ashir");
+Animal dima = new Animal("Dima");
+Person sergey = new Person("Sergey", "Goldysh");
+Person atai = new Person("Atai", "Mamatov");
 
-Player p = (Player)pl;
-Console.WriteLine(p.Firstname);
-movable.Move();
-Person p1 = new Player("1", "2", 3);
+crazyPeople.Add(askar);
+crazyPeople.Add(ashir);
+crazyPeople.Add(dima);
+crazyPeople.Add(sergey);
+crazyPeople.Add(atai);
+
+foreach(IBitable aiiiiii in crazyPeople)
+{
+    aiiiiii.Bite(atai);
+}
+
+for(int i= 0; i < crazyPeople.Count; i++)
+{
+    IBitable crazy = crazyPeople[i];
+}
