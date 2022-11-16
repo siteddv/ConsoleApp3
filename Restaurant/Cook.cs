@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Restaurant
+﻿namespace Restaurant
 {
     public class Chief : Person, IDrinkable
     {
@@ -14,6 +8,7 @@ namespace Restaurant
         }
 
         public string[] Dishes { get; set; }
+        public string CurrentDish { get; set; }
         public bool IsCooked { get; set; }
         public void Cook(string dish)
         {
@@ -26,6 +21,7 @@ namespace Restaurant
             Console.WriteLine($"{dish} is cooking by {Name} cook");
             Thread.Sleep(1000);
             Console.WriteLine($"{dish} is cooked");
+            CurrentDish = dish;
             IsCooked = true;
         }
 
