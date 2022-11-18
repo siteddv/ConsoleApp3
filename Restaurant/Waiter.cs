@@ -4,7 +4,6 @@
     {
         public Waiter(string name) : base(name)
         {
-
         }
 
         public Guest Guest { get; set; }
@@ -13,8 +12,6 @@
         {
             if (chief.IsCooked)
             {
-                //GiveFood(guest);
-                //guest.Eat()
                 return chief.CurrentDish;
             }
 
@@ -29,7 +26,7 @@
 
         public void Drink()
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Waiter {Name} is drinking");
         }
         public void GiveFood(string dish)
         {

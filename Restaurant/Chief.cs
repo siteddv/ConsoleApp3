@@ -2,12 +2,12 @@
 {
     public class Chief : Person, IDrinkable
     {
-        public Chief(string name, string[] dishes) : base(name)
+        public Chief(string name, List<string> dishes) : base(name)
         {
             Dishes = dishes;
         }
 
-        public string[] Dishes { get; set; }
+        public List<string> Dishes { get; set; }
         public string CurrentDish { get; set; }
         public bool IsCooked { get; set; }
         public void Cook(string dish)
