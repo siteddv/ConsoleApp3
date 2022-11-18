@@ -9,12 +9,11 @@ Chief hotChief = new Chief(
     "Askar",
     new List<string>
     {
-        Settings.Carbonara,
-        Settings.Lasania,
-        Settings.Riggotta,
-        Settings.Caporesso,
-        Settings.Farfalle,
-        Settings.Fetuchinni,
+        Settings.Plov,
+        Settings.Beshbarmak,
+        Settings.Shaurma,
+        Settings.Kuksi,
+        Settings.Manty,
     }
 );
 
@@ -22,8 +21,8 @@ Chief coldChief = new Chief(
     "Ayub",
     new List<string>
     {
-        Settings.Caporesso,
-        Settings.Semifredo,
+        Settings.OliviePoxyi,
+        Settings.Morozhenoe,
     }
 );
 
