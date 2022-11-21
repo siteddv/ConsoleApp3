@@ -33,17 +33,11 @@
 
         public void GiveFoodToGuest()
         {
-            foreach(var dish in Dishes)
+            foreach(string dish in Dishes)
             {
                 Console.WriteLine($"{Name} gave {dish} to {Guest.Name}");
                 Guest.GetDish(dish);
             }
-        }
-
-        public void TakeOrder(List<string> dishes, Kitchen kitchen)
-        {
-            Dishes = dishes;
-            kitchen.GetOrder(dishes, this);
         }
     }
 }

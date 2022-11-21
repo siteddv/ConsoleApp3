@@ -55,7 +55,7 @@ List<IDrinkable> staff = new List<IDrinkable>
 
 #endregion
 
-var orders = new List<string>()
+List<string> orders = new List<string>()
     {
         Settings.Manty,
         Settings.Shaurma,
@@ -63,7 +63,7 @@ var orders = new List<string>()
     };
 
 guest1.GiveOrder(waiter2, orders);
-waiter2.TakeOrder(orders, kitchen);
+kitchen.GetOrder(orders, waiter2);
 waiter2.GiveFoodToGuest();
 foreach(var order in orders)
 {

@@ -17,7 +17,7 @@ namespace Restaurant
 
         public void GetOrder(List<string> dishes, Waiter waiter)
         {
-            foreach(var chief in Staff)
+            foreach(Chief chief in Staff)
             {
                 foreach(string dish in dishes)
                 {

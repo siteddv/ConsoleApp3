@@ -22,6 +22,7 @@ namespace Restaurant
                 Morozhenoe
             };
         }
+
         public static List<string> Menu { get; set; }
 
         #region Dishes names

@@ -41,6 +41,7 @@
         {
             Waiter = waiter;
             Waiter.TakeGuest(this);
+            Waiter.Dishes = dishes;
         }
     }
 }
