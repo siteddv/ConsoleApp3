@@ -8,17 +8,23 @@ namespace Restaurant
 {
     public static class Settings
     {
-        public static List<string> Menu = new List<string>
+        public static void Init()
         {
-            OliviePoxyi,
-            Plov,
-            Manty,
-            Pizza,
-            Beshbarmak,
-            Kuksi,
-            Shaurma,
-            Morozhenoe
-        };
+            Menu = new List<string>
+            {
+                OliviePoxyi,
+                Plov,
+                Manty,
+                Pizza,
+                Beshbarmak,
+                Kuksi,
+                Shaurma,
+                Morozhenoe
+            };
+        }
+        public static List<string> Menu { get; set; }
+
+        #region Dishes names
 
         /// <summary>
         /// OliviePoxyi. Cold dish
@@ -59,5 +65,7 @@ namespace Restaurant
         /// Morozhenoe. Cold dish
         /// </summary>
         public static string Morozhenoe = "Morozhenoe";
+
+        #endregion
     }
 }

@@ -7,12 +7,14 @@
         }
 
         public Guest Guest { get; set; }
+        public Chief Chief { get; set; }
+        public List<string> Dishes { get; set; }
 
-        public string GetDish(Chief chief)
+        public string GetDish()
         {
-            if (chief.IsCooked)
+            if (Chief.IsCooked)
             {
-                return chief.CurrentDish;
+                return Chief.CurrentDish;
             }
 
             Console.WriteLine($"Waiter {Name} is waiting");
@@ -28,10 +30,20 @@
         {
             Console.WriteLine($"Waiter {Name} is drinking");
         }
-        public void GiveFood(string dish)
+
+        public void GiveFoodToGuest()
         {
-            Console.WriteLine($"{Name} gave {dish} to {Guest.Name}");
-            Guest.GetDish(dish);
+            foreach(var dish in Dishes)
+            {
+                Console.WriteLine($"{Name} gave {dish} to {Guest.Name}");
+                Guest.GetDish(dish);
+            }
+        }
+
+        public void TakeOrder(List<string> dishes, Kitchen kitchen)
+        {
+            Dishes = dishes;
+            kitchen.GetOrder(dishes, this);
         }
     }
 }

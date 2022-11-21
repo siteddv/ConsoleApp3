@@ -4,9 +4,11 @@
     {
         public Guest(string name) : base(name)
         {
+            Dishes = new List<string>();
         }
 
         public List<string> Dishes { get; set; }
+        public Waiter Waiter { get; set; }
 
         public void Eat(string dish)
         {
@@ -14,7 +16,7 @@
             {
                 if (Dishes.Contains(dish))
                 {
-                    Console.WriteLine($"Ammmmm, delicious {dish}");
+                    Console.WriteLine($"Ammmmm, delicious {dish} - {Name} said");
                     Thread.Sleep(3000);
                     Dishes.Remove(dish);
                 }
@@ -33,6 +35,12 @@
         public void GetDish(string dish)
         {
             Dishes.Add(dish);
+        }
+
+        public void GiveOrder(Waiter waiter, List<string> dishes)
+        {
+            Waiter = waiter;
+            Waiter.TakeGuest(this);
         }
     }
 }

@@ -7,9 +7,13 @@
             Dishes = dishes;
         }
 
-        public List<string> Dishes { get; set; }
+        private List<string> Dishes { get; set; }
         public string CurrentDish { get; set; }
         public bool IsCooked { get; set; }
+        public bool IsCanCook(string dish)
+        {
+            return Dishes.Contains(dish);
+        }
         public void Cook(string dish)
         {
             if (!Dishes.Contains(dish))
