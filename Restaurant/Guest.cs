@@ -4,21 +4,21 @@
     {
         public Guest(string name) : base(name)
         {
-            Dishes = new List<string>();
+            Orders = new List<string>();
         }
 
-        public List<string> Dishes { get; set; }
+        public List<string> Orders { get; set; }
         public Waiter Waiter { get; set; }
 
         public void Eat(string dish)
         {
             if (Settings.Menu.Contains(dish))
             {
-                if (Dishes.Contains(dish))
+                if (Orders.Contains(dish))
                 {
                     Console.WriteLine($"Ammmmm, delicious {dish} - {Name} said");
                     Thread.Sleep(3000);
-                    Dishes.Remove(dish);
+                    Orders.Remove(dish);
                 }
                 else
                 {
@@ -34,7 +34,7 @@
 
         public void GetDish(string dish)
         {
-            Dishes.Add(dish);
+            Orders.Add(dish);
         }
 
         public void GiveOrder(Waiter waiter, List<string> dishes)
