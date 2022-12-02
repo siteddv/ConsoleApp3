@@ -2,7 +2,7 @@
 {
     public class Waiter : Person, IDrinkable
     {
-        public Waiter(string name) : base(name)
+        public Waiter(string name, Gender gender) : base(name, gender)
         {
         }
 

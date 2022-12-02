@@ -2,7 +2,7 @@
 {
     public class Chief : Person, IDrinkable
     {
-        public Chief(string name, List<string> dishes) : base(name)
+        public Chief(string name, Gender gender, List<string> dishes) : base(name, gender)
         {
             Dishes = dishes;
         }

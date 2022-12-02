@@ -1,20 +1,11 @@
 ﻿using ConsoleApp3;
 
 
-List<IBitable> crazyPeople = new List<IBitable>();
-Animal askar = new Animal("Askar");
-Animal ashir = new Animal("Ashir");
-Animal dima = new Animal("Dima");
-Person sergey = new Person("Sergey", "Goldysh");
-Person atai = new Person("Atai", "Mamatov");
+GenericClass<int> cli = new GenericClass<int>();
+cli.Name = 123;
 
-crazyPeople.Add(askar);
-crazyPeople.Add(ashir);
-crazyPeople.Add(dima);
-crazyPeople.Add(sergey);
-crazyPeople.Add(atai);
+GenericClass<string> cls = new GenericClass<string>();
+cls.Name = "Dima";
 
-foreach(IBitable aiiiiii in crazyPeople)
-{
-    aiiiiii.Bite(atai);
-}
+GenericClass<bool> clb = new GenericClass<bool>();
+clb.Name = true;

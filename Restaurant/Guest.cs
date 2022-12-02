@@ -2,7 +2,7 @@
 {
     public class Guest : Person
     {
-        public Guest(string name) : base(name)
+        public Guest(string name, Gender gender) : base(name, gender)
         {
             Orders = new List<string>();
         }

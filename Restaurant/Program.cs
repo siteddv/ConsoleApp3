@@ -1,16 +1,46 @@
-﻿using Restaurant;
+﻿using ConsoleApp3;
+
+//int a = 1; // 
+//ch(a); // 1
+//Console.WriteLine(a); // 1
+
+//static void ch(int b)
+//{
+//    b++; // 2
+//}
+
+//Person p = new Person("Dima");
+//chp(p);
+//Console.WriteLine(p.Name); // Askar
+
+//static void chp(Person b)
+//{
+//    b.Name = "Askar";
+//}
+
+//a = 1;
+//chr(ref a);
+//Console.WriteLine(a); // 
+
+//static void chr(ref int b)
+//{
+//    b++;
+//}
+
+using Restaurant;
+using Restaurant;
 
 #region Declarations
 
 Settings.Init();
 
-Guest sezimGuest = new Guest("Sezim");
-Guest _ = new Guest("Dima");
-Guest guest3 = new Guest("Ayim");
-Guest guest4 = new Guest("Boris");
+Guest sezimGuest = new Guest("Sezim", Gender.Female);
+Guest _ = new Guest("Dima", Gender.Female);
+Guest guest3 = new Guest("Ayim", Gender.Female);
+Guest guest4 = new Guest("Boris", Gender.Female);
 
 Chief hotChief = new Chief(
-    "Askar",
+    "Askar", Gender.Female,
     new List<string>
     {
         Settings.Plov,
@@ -22,7 +52,7 @@ Chief hotChief = new Chief(
 );
 
 Chief coldChief = new Chief(
-    "Ayub",
+    "Ayub", Gender.Female,
     new List<string>
     {
         Settings.OliviePoxyi,
@@ -31,7 +61,7 @@ Chief coldChief = new Chief(
 );
 
 Chief pizzaChief = new Chief(
-    "Nasrat",
+    "Nasrat", Gender.Female,
     new List<string>
     {
         Settings.Pizza,
@@ -41,10 +71,10 @@ Chief pizzaChief = new Chief(
 var lst = new List<Person> { sezimGuest, hotChief };
 
 Kitchen kitchen = new Kitchen(
-    new List<Chief> { hotChief, coldChief, pizzaChief});
+    new List<Chief> { hotChief, coldChief, pizzaChief });
 
-Waiter waiter1 = new Waiter("Ashir");
-Waiter bekaWaiter = new Waiter("Beka");
+Waiter waiter1 = new Waiter("Ashir", Gender.Female);
+Waiter bekaWaiter = new Waiter("Beka", Gender.Female);
 
 List<IDrinkable> staff = new List<IDrinkable>
 {
@@ -57,22 +87,10 @@ List<IDrinkable> staff = new List<IDrinkable>
 
 #endregion
 
-List<string> orders = new List<string>()
-    {
-        Settings.Manty,
-        Settings.Shaurma,
-        Settings.Morozhenoe
-    };
+//hotChief.CurrentDish = "Shawerma";
+//Console.WriteLine(hotChief.CurrentDish);
+//Person person = hotChief;
+//Chief newChief = (Chief)person;
+//Console.WriteLine(newChief.CurrentDish);
 
-sezimGuest.GiveOrder(bekaWaiter, orders);
-kitchen.GetOrder(orders, bekaWaiter);
-bekaWaiter.GiveFoodToGuest();
-foreach(var order in orders)
-{
-    sezimGuest.Eat(order);
-}
-
-foreach (IDrinkable drunkPerson in staff)
-{
-    drunkPerson.Drink();
-}
+GenericClass<int>
