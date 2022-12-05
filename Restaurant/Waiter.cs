@@ -39,5 +39,10 @@
                 Guest.GetDish(dish);
             }
         }
+
+        public override string ToString()
+        {
+            return $"{Name}|{Gender}|{Chief.Name}|{Guest.Name}";
+        }
     }
 }

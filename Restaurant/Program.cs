@@ -1,46 +1,15 @@
-﻿using ConsoleApp3;
+﻿#region Declarations
 
-//int a = 1; // 
-//ch(a); // 1
-//Console.WriteLine(a); // 1
-
-//static void ch(int b)
-//{
-//    b++; // 2
-//}
-
-//Person p = new Person("Dima");
-//chp(p);
-//Console.WriteLine(p.Name); // Askar
-
-//static void chp(Person b)
-//{
-//    b.Name = "Askar";
-//}
-
-//a = 1;
-//chr(ref a);
-//Console.WriteLine(a); // 
-
-//static void chr(ref int b)
-//{
-//    b++;
-//}
-
+using ConsoleApp3;
 using Restaurant;
-using Restaurant;
-
-#region Declarations
 
 Settings.Init();
 
 Guest sezimGuest = new Guest("Sezim", Gender.Female);
-Guest _ = new Guest("Dima", Gender.Female);
-Guest guest3 = new Guest("Ayim", Gender.Female);
-Guest guest4 = new Guest("Boris", Gender.Female);
 
 Chief hotChief = new Chief(
-    "Askar", Gender.Female,
+    "Askar",
+    Gender.Male,
     new List<string>
     {
         Settings.Plov,
@@ -52,7 +21,8 @@ Chief hotChief = new Chief(
 );
 
 Chief coldChief = new Chief(
-    "Ayub", Gender.Female,
+    "Ayub",
+    Gender.Male,
     new List<string>
     {
         Settings.OliviePoxyi,
@@ -61,7 +31,8 @@ Chief coldChief = new Chief(
 );
 
 Chief pizzaChief = new Chief(
-    "Nasrat", Gender.Female,
+    "Nasrat",
+    Gender.Male,
     new List<string>
     {
         Settings.Pizza,
@@ -73,12 +44,10 @@ var lst = new List<Person> { sezimGuest, hotChief };
 Kitchen kitchen = new Kitchen(
     new List<Chief> { hotChief, coldChief, pizzaChief });
 
-Waiter waiter1 = new Waiter("Ashir", Gender.Female);
-Waiter bekaWaiter = new Waiter("Beka", Gender.Female);
+Waiter bekaWaiter = new Waiter("Beka", Gender.Male);
 
 List<IDrinkable> staff = new List<IDrinkable>
 {
-    waiter1,
     bekaWaiter,
     hotChief,
     coldChief,
@@ -87,10 +56,31 @@ List<IDrinkable> staff = new List<IDrinkable>
 
 #endregion
 
-//hotChief.CurrentDish = "Shawerma";
-//Console.WriteLine(hotChief.CurrentDish);
-//Person person = hotChief;
-//Chief newChief = (Chief)person;
-//Console.WriteLine(newChief.CurrentDish);
+List<string> orders = new List<string>()
+    {
+        Settings.Manty,
+        Settings.Shaurma,
+        Settings.Morozhenoe
+    };
 
-GenericClass<int>
+sezimGuest.GiveOrder(bekaWaiter, orders);
+kitchen.GetOrder(orders, bekaWaiter);
+bekaWaiter.GiveFoodToGuest();
+foreach (var order in orders)
+{
+    sezimGuest.Eat(order);
+}
+
+foreach (IDrinkable drunkPerson in staff)
+{
+    drunkPerson.Drink();
+}
+
+DbHelper<Guest> dbHelper = new DbHelper<Guest>();
+dbHelper.Write(sezimGuest);
+
+DbHelper<Chief> chiefDbHelper = new DbHelper<Chief>();
+chiefDbHelper.Write(hotChief);
+
+DbHelper<Waiter> waiterDbHelper = new DbHelper<Waiter>();
+waiterDbHelper.Write(bekaWaiter);

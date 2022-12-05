@@ -1,7 +1,19 @@
 ﻿namespace ConsoleApp3
 {
-    public class GenericClass<T>
+    public class DbHelper<T> : IDbillable<T>
+        where T : Person
     {
-        public T Name { get; set; }
+        public string Path { get; set; }
+
+        public DbHelper(string path)
+        {
+            Path = path;
+        }
+
+        public void Write(T value)
+        {
+            using var writer = new StreamWriter(Path);
+            writer.Write(value);
+        }
     }
 }

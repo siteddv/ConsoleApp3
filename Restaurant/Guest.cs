@@ -17,7 +17,6 @@
                 if (Orders.Contains(dish))
                 {
                     Console.WriteLine($"Ammmmm, delicious {dish} - {Name} said");
-                    Thread.Sleep(3000);
                     Orders.Remove(dish);
                 }
                 else
@@ -42,6 +41,11 @@
             Waiter = waiter;
             Waiter.TakeGuest(this);
             Waiter.Dishes = dishes;
+        }
+
+        public override string ToString()
+        {
+            return $"{Name}|{Gender}|{Waiter.Name}";
         }
     }
 }
