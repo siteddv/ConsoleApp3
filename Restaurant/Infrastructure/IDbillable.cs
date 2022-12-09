@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp3
+﻿namespace Restaurant.Infrastructure
 {
     public interface IDbillable<T>
     {

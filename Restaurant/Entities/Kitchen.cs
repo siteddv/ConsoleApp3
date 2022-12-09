@@ -1,4 +1,6 @@
-﻿namespace Restaurant
+﻿using Restaurant.Managers;
+
+namespace Restaurant.Entities
 {
     public class Kitchen
     {
@@ -11,7 +13,7 @@
 
         public void GetOrder(Waiter waiter)
         {
-            foreach(string dish in waiter.Dishes)
+            foreach (string dish in waiter.Dishes)
             {
                 foreach (ChiefManager chief in Staff)
                 {

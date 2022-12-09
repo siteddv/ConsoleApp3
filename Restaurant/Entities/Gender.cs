@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Restaurant
+namespace Restaurant.Entities
 {
     public enum Gender
     {

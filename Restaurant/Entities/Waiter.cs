@@ -1,4 +1,4 @@
-﻿namespace Restaurant
+﻿namespace Restaurant.Entities
 {
     public class Waiter : Person
     {
@@ -10,7 +10,7 @@
         public Chief Chief { get; set; }
         public List<string> Dishes { get; set; }
 
-        
+
 
         public override string ToString()
         {

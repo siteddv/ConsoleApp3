@@ -1,6 +1,6 @@
-﻿using Restaurant;
+﻿using Restaurant.Entities;
 
-namespace ConsoleApp3
+namespace Restaurant.Infrastructure
 {
     public class DbHelper<T> : IDbillable<T>
         where T : Person

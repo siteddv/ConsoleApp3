@@ -1,4 +1,7 @@
-﻿namespace Restaurant
+﻿using Restaurant.Entities;
+using Restaurant.Infrastructure;
+
+namespace Restaurant.Managers
 {
     public class GuestManager
     {

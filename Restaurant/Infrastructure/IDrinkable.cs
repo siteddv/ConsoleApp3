@@ -1,4 +1,4 @@
-﻿namespace Restaurant
+﻿namespace Restaurant.Infrastructure
 {
     public interface IDrinkable
     {

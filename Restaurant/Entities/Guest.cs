@@ -1,4 +1,4 @@
-﻿namespace Restaurant
+﻿namespace Restaurant.Entities
 {
     public class Guest : Person
     {
@@ -8,13 +8,12 @@
         }
 
         public List<string> Orders { get; set; }
-        public Waiter Waiter { get; set; }
 
-        
+
 
         public override string ToString()
         {
-            return $"{Name}|{Gender}|{Waiter.Name}";
+            return $"{Name}|{Gender}|";
         }
     }
 }

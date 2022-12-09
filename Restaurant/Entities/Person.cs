@@ -1,4 +1,4 @@
-﻿namespace Restaurant
+﻿namespace Restaurant.Entities
 {
     public abstract class Person
     {

@@ -1,4 +1,7 @@
-﻿namespace Restaurant
+﻿using Restaurant.Entities;
+using Restaurant.Infrastructure;
+
+namespace Restaurant.Managers
 {
     public class ChiefManager : IDrinkable
     {
@@ -32,9 +35,6 @@
             Console.WriteLine($"Chief {Chief.Name} is drinking");
         }
 
-        public override string ToString()
-        {
-            return $"{Chief.Name}|{Chief.Gender}|{Chief.CurrentDish}";
-        }
+
     }
 }

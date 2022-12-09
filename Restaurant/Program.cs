@@ -1,4 +1,6 @@
-﻿using Restaurant;
+﻿using Restaurant.Entities;
+using Restaurant.Infrastructure;
+using Restaurant.Managers;
 
 Settings.Init();
 
@@ -26,8 +28,6 @@ Chief coldChief = new Chief(
         Settings.Morozhenoe,
     }
 );
-
-
 
 Waiter bekaWaiter = new Waiter("Beka", Gender.Male);
 
