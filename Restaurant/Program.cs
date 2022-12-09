@@ -1,7 +1,4 @@
-﻿#region Declarations
-
-using ConsoleApp3;
-using Restaurant;
+﻿using Restaurant;
 
 Settings.Init();
 
@@ -30,57 +27,29 @@ Chief coldChief = new Chief(
     }
 );
 
-Chief pizzaChief = new Chief(
-    "Nasrat",
-    Gender.Male,
-    new List<string>
-    {
-        Settings.Pizza,
-    }
-);
-
-var lst = new List<Person> { sezimGuest, hotChief };
-
 Kitchen kitchen = new Kitchen(
-    new List<Chief> { hotChief, coldChief, pizzaChief });
+    new List<Chief> { hotChief, coldChief });
 
 Waiter bekaWaiter = new Waiter("Beka", Gender.Male);
 
-List<IDrinkable> staff = new List<IDrinkable>
-{
-    bekaWaiter,
-    hotChief,
-    coldChief,
-    pizzaChief
-};
+//#endregion
 
-#endregion
+//List<string> orders = new List<string>()
+//    {
+//        Settings.Manty,
+//        Settings.Shaurma,
+//        Settings.Morozhenoe
+//    };
 
-List<string> orders = new List<string>()
-    {
-        Settings.Manty,
-        Settings.Shaurma,
-        Settings.Morozhenoe
-    };
+//sezimGuest.TakeWaiter(bekaWaiter, orders);
+//kitchen.GetOrder(orders, bekaWaiter);
+//bekaWaiter.GiveFoodToGuest();
+//foreach (var order in orders)
+//{
+//    sezimGuest.Eat(order);
+//}
 
-sezimGuest.GiveOrder(bekaWaiter, orders);
-kitchen.GetOrder(orders, bekaWaiter);
-bekaWaiter.GiveFoodToGuest();
-foreach (var order in orders)
-{
-    sezimGuest.Eat(order);
-}
-
-foreach (IDrinkable drunkPerson in staff)
-{
-    drunkPerson.Drink();
-}
-
-DbHelper<Guest> dbHelper = new DbHelper<Guest>();
-dbHelper.Write(sezimGuest);
-
-DbHelper<Chief> chiefDbHelper = new DbHelper<Chief>();
-chiefDbHelper.Write(hotChief);
-
-DbHelper<Waiter> waiterDbHelper = new DbHelper<Waiter>();
-waiterDbHelper.Write(bekaWaiter);
+//foreach (IDrinkable drunkPerson in staff)
+//{
+//    drunkPerson.Drink();
+//}
