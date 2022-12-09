@@ -7,7 +7,7 @@
             Chief = chief;
         }
 
-        public Chief Chief { get; set; }
+        public readonly Chief Chief;
         public bool IsCanCook(string dish)
         {
             return Chief.Dishes.Contains(dish);

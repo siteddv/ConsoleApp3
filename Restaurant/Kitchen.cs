@@ -1,31 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Restaurant
+﻿namespace Restaurant
 {
     public class Kitchen
     {
-        public List<Chief> Staff { get; set; }
+        public List<ChiefManager> Staff { get; set; }
 
-        public Kitchen(List<Chief> staff)
+        public Kitchen(List<ChiefManager> staff)
         {
             Staff = staff;
         }
 
-        public void GetOrder(List<string> dishes, Waiter waiter)
+        public void GetOrder(Waiter waiter)
         {
-            foreach(Chief chief in Staff)
+            foreach(string dish in waiter.Dishes)
             {
-                foreach(string dish in dishes)
+                foreach (ChiefManager chief in Staff)
                 {
                     if (chief.IsCanCook(dish))
                     {
                         chief.Cook(dish);
-                        waiter.Chief = chief;
-                        continue;
+                        waiter.Chief = chief.Chief;
+                        break;
                     }
                 }
             }

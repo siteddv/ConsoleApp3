@@ -27,29 +27,40 @@ Chief coldChief = new Chief(
     }
 );
 
-Kitchen kitchen = new Kitchen(
-    new List<Chief> { hotChief, coldChief });
+
 
 Waiter bekaWaiter = new Waiter("Beka", Gender.Male);
 
-//#endregion
+List<string> orders = new List<string>()
+    {
+        Settings.Manty,
+        Settings.Shaurma,
+        Settings.Morozhenoe
+    };
 
-//List<string> orders = new List<string>()
-//    {
-//        Settings.Manty,
-//        Settings.Shaurma,
-//        Settings.Morozhenoe
-//    };
+GuestManager sezimManager = new GuestManager(sezimGuest);
+WaiterManager bekaManager = new WaiterManager(bekaWaiter);
+ChiefManager hotManager = new ChiefManager(hotChief);
+ChiefManager coldManager = new ChiefManager(coldChief);
 
-//sezimGuest.TakeWaiter(bekaWaiter, orders);
-//kitchen.GetOrder(orders, bekaWaiter);
-//bekaWaiter.GiveFoodToGuest();
-//foreach (var order in orders)
-//{
-//    sezimGuest.Eat(order);
-//}
+Kitchen kitchen = new Kitchen(
+    new List<ChiefManager> { hotManager, coldManager });
 
-//foreach (IDrinkable drunkPerson in staff)
-//{
-//    drunkPerson.Drink();
-//}
+List<IDrinkable> drunks = new List<IDrinkable>
+{
+    hotManager,
+    coldManager,
+    bekaManager
+};
+
+bekaManager.GetOrder(sezimGuest, orders);
+kitchen.GetOrder(bekaManager.Waiter);
+List<string> cookedDishes = bekaManager.GetCookedDishes();
+sezimManager.GetCookedDishes(cookedDishes);
+
+sezimManager.Eat();
+
+foreach (IDrinkable drinkable in drunks)
+{
+    drinkable.Drink();
+}

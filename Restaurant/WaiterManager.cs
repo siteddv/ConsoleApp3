@@ -7,7 +7,7 @@
             Waiter = waiter;
         }
 
-        public Waiter Waiter { get; set; }
+        public readonly Waiter Waiter;
         public string GetDish()
         {
             if (Waiter.Chief.IsCooked)
@@ -24,12 +24,14 @@
             Console.WriteLine($"Waiter {Waiter.Name} is drinking");
         }
 
-        public void GiveFoodToGuest()
+        public List<string> GetCookedDishes()
         {
             foreach (string dish in Waiter.Dishes)
             {
                 Console.WriteLine($"{Waiter.Name} gave {dish} to {Waiter.Guest.Name}");
             }
+
+            return Waiter.Dishes;
         }
 
         public void GetOrder(Guest guest, List<string> dishes)

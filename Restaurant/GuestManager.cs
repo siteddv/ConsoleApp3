@@ -7,32 +7,32 @@
             Guest = guest;
         }
 
-        public Guest Guest { get; set; }
+        public readonly Guest Guest;
 
-        public void Eat(string dish)
+        public void Eat()
+        {
+            foreach (string dish in Guest.Orders)
+            {
+                EatDish(dish);
+            }
+        }
+
+        public void GetCookedDishes(List<string> dishes)
+        {
+            Guest.Orders.AddRange(dishes);
+        }
+
+        private void EatDish(string dish)
         {
             if (Settings.Menu.Contains(dish))
             {
-                if (Guest.Orders.Contains(dish))
-                {
-                    Console.WriteLine($"Ammmmm, delicious {dish} - {Guest.Name} said");
-                    Guest.Orders.Remove(dish);
-                }
-                else
-                {
-                    Console.WriteLine($"Guest {Guest.Name} eating something else");
-                }
+                Console.WriteLine($"Ammmmm, delicious {dish} - {Guest.Name} said");
+                Guest.Orders.Remove(dish);
             }
             else
             {
-                Console.WriteLine("I\'m leaving this fucking restaurant");
+                Console.WriteLine($"{Guest.Name} guest is eating something else");
             }
-
-        }
-
-        public void TakeWaiter(Waiter waiter)
-        {
-            Guest.Waiter = waiter;
         }
     }
 }
