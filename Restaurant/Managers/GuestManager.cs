@@ -18,6 +18,7 @@ namespace Restaurant.Managers
             {
                 EatDish(dish);
             }
+            Guest.Orders.Clear();
         }
 
         public void GetCookedDishes(List<string> dishes)
@@ -30,7 +31,7 @@ namespace Restaurant.Managers
             if (Settings.Menu.Contains(dish))
             {
                 Console.WriteLine($"Ammmmm, delicious {dish} - {Guest.Name} said");
-                Guest.Orders.Remove(dish);
+                
             }
             else
             {

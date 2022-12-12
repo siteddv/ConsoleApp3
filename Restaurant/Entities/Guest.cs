@@ -9,11 +9,9 @@
 
         public List<string> Orders { get; set; }
 
-
-
         public override string ToString()
         {
-            return $"{Name}|{Gender}|";
+            return $"{Name}|{Gender}";
         }
     }
 }

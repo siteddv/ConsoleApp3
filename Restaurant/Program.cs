@@ -64,3 +64,7 @@ foreach (IDrinkable drinkable in drunks)
 {
     drinkable.Drink();
 }
+
+DbHelper<Chief> chiefDbHelper = new DbHelper<Chief>();
+chiefDbHelper.Write(hotChief);
+chiefDbHelper.Write(coldChief);
